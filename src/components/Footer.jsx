@@ -8,7 +8,7 @@
  * Components
  */
 import { ButtonPrimary } from "../components/Button"
-
+import { useNavigate } from "react-router-dom";
 
 const sitemap = [
     {
@@ -46,6 +46,14 @@ const sitemap = [
 
 
 const Footer = () => {
+
+    const navigate = useNavigate(); // Initialize navigate function
+    
+    const handleNavigation = (event, href) => {
+        event.preventDefault(); // Prevent default behavior (page reload)
+        navigate(href); // Programmatically navigate using React Router
+    };
+
     return (
         <footer className="section">
             <div className="container">
@@ -90,6 +98,7 @@ const Footer = () => {
                                             href={href}
                                             target="_blank"
                                             className="block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200 reveal-up"
+                                            onClick={(e) => handleNavigation(e, href)} // Call handleNavigation on click
                                         >
                                             {label}
                                         </a>
