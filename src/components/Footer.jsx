@@ -17,7 +17,7 @@ const sitemap = [
     },
     {
       label: 'Skills',
-      href: '/skills'
+      href: '/ali-portfolio/skills'
     },
     {
       label: 'Projects',
