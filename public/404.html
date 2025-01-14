@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ali Mahdi - Portfolio (404)</title>
+    <link rel="shortcut icon" href="images/logo.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <script>
+      // Redirect to the root path of your app
+      const path = window.location.pathname;
+      // Remove any extra path except the base path
+      if (path !== '/') {
+        window.location.replace('/ali-portfolio' + path);
+      }
+    </script>
+  </body>
+</html>
