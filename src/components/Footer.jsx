@@ -9,7 +9,6 @@
  */
 import { ButtonPrimary } from "../components/Button"
 import { Link } from 'react-router-dom';
-import Skill from "../pages/Skills";
 
 const sitemap = [
     {
@@ -82,7 +81,7 @@ const Footer = () => {
                                             to={href}
                                             className="block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200 reveal-up"
                                         >
-                                            <Skills />
+                                            {label}
                                         </Link>
                                         
                                     </li>
