@@ -6,7 +6,7 @@
 
 /* Components */
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from "./components/Header"
 import Navbar from './components/Navbar';
@@ -24,7 +24,7 @@ const App = () => {
       <Header />
       <main className="mt-6">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/publications" element={<Publications />} />
