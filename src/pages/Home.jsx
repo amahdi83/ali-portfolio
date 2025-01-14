@@ -29,6 +29,14 @@ const Home = () => {
     };
 }, []);
 
+useEffect(() => {
+  // Force reload of images when navigating to the homepage
+  const images = document.querySelectorAll("img");
+  images.forEach((img) => {
+    img.src = img.src; // This forces the image to reload
+  });
+}, []);
+
 const aboutItems = [
   {
       label: 'Years of research',
