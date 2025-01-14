@@ -54,7 +54,7 @@ const Navbar = ({ navOpen }) => {
         { label: "Skills", link: "/skills", className: "nav-link" },
         { label: "Projects", link: "/projects", className: "nav-link" },
         { label: "Publications", link: "/publications", className: "nav-link" },
-        { label: "Contact", link: "/ali-portfolio/contact", className: "nav-link md:hidden" },
+        { label: "Contact", link: "/contact", className: "nav-link md:hidden" },
     ];
 
     return (
