@@ -9,7 +9,6 @@
  */
 import { ButtonPrimary } from "../components/Button"
 
-const BASE_PATH = process.env.NODE_ENV === "production" ? "/ali-portfolio" : "";
 
 const sitemap = [
     {
@@ -18,7 +17,7 @@ const sitemap = [
     },
     {
       label: 'Skills',
-      href: '${BASE_PATH}/skills'
+      href: '/ali-porfolio/skills'
     },
     {
       label: 'Projects',
