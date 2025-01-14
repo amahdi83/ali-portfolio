@@ -14,11 +14,11 @@ import { NavLink } from "react-router-dom";
 const sitemap = [
     {
       label: 'Home',
-      href: '/ali-portfolio/'
+      href: '/'
     },
     {
       label: 'Skills',
-      href: '/ali-portfolio/skills'
+      href: '/skills'
     },
     {
       label: 'Projects',
