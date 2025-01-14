@@ -67,12 +67,14 @@ const Footer = () => {
                             <ul>
                                 {sitemap.map(({ label, href }, Key) => (
                                     <li key={Key}>
-                                        <a 
-                                            href={href}
+
+                                        <NavLink
+                                            to={href}
                                             className="block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200 reveal-up"
                                         >
                                             {label}
-                                        </a>
+                                        </NavLink>
+                                        
                                     </li>
                                 ))}
                             </ul>
