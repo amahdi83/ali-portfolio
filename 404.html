@@ -8,11 +8,11 @@
   </head>
   <body>
     <script>
-      // Redirect to the root path of your app
+      // If we're not at the root page and we got a 404, redirect to the root page correctly
       const path = window.location.pathname;
-      // Remove any extra path except the base path
-      if (path !== '/') {
-        window.location.replace('/ali-portfolio' + path);
+      if (path !== '/' && !path.startsWith('/ali-portfolio')) {
+        // Only redirect to the root of the project if the base path is missing
+        window.location.replace('/ali-portfolio');
       }
     </script>
   </body>
