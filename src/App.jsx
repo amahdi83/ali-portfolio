@@ -20,7 +20,7 @@ import Footer from './components/Footer';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/ali-portfolio">
       <Header />
       <main className="mt-6">
         <Routes>
