@@ -12,182 +12,182 @@ import SkillCard from "../components/SkillCard";
 
 const skillItem = [
     {
-      imgSrc: '/images/Python.svg',
+      imgSrc: './images/Python.svg',
       label: 'Python',
       desc: 'Programming Language'
     },
     {
-      imgSrc: '/images/TensorFlow.svg',
+      imgSrc: './images/TensorFlow.svg',
       label: 'TensorFlow',
       desc: 'Deep Learning'
     },
     {
-      imgSrc: '/images/PyTorch.svg',
+      imgSrc: './images/PyTorch.svg',
       label: 'PyTorch',
       desc: 'Deep Learning'
     },
     {
-      imgSrc: '/images/Keras.svg',
+      imgSrc: './images/Keras.svg',
       label: 'Keras',
       desc: 'Deep Learning'
     },
     {
-      imgSrc: '/images/scikit-learn.svg',
+      imgSrc: './images/scikit-learn.svg',
       label: 'Scikit-learn',
       desc: 'Machine Learning'
     },
     {
-      imgSrc: '/images/OpenCV.svg',
+      imgSrc: './images/OpenCV.svg',
       label: 'OpenCV',
       desc: 'Computer Vision'
     },
     {
-      imgSrc: '/images/NumPy.svg',
+      imgSrc: './images/NumPy.svg',
       label: 'NumPy',
       desc: 'Numerical Computing'
     },
     {
-      imgSrc: '/images/Pandas.svg',
+      imgSrc: './images/Pandas.svg',
       label: 'Pandas',
       desc: 'Data Manipulation'
     },
     {
-      imgSrc: '/images/pillow.svg',
+      imgSrc: './images/pillow.svg',
       label: 'Pillow',
       desc: 'Image Processing'
     },
     {
-      imgSrc: '/images/scipy.svg',
+      imgSrc: './images/scipy.svg',
       label: 'SciPy',
       desc: 'Scientific Computing'
     },
     {
-      imgSrc: '/images/Matplotlib.svg',
+      imgSrc: './images/Matplotlib.svg',
       label: 'Matplotlib',
       desc: 'Data Visualization'
     },
     {
-      imgSrc: '/images/seaborn.svg',
+      imgSrc: './images/seaborn.svg',
       label: 'Seaborn',
       desc: 'Data Visualization'
     },
     {
-      imgSrc: '/images/tensorrt.svg',
+      imgSrc: './images/tensorrt.svg',
       label: 'TensorRT',
       desc: 'Inference Optimization'
     },
     {
-      imgSrc: '/images/Jupyter.svg',
+      imgSrc: './images/Jupyter.svg',
       label: 'Jupyter Notebook',
       desc: 'Interactive Notebooks'
     },
     {
-      imgSrc: '/images/MATLAB.svg',
+      imgSrc: './images/MATLAB.svg',
       label: 'MATLAB',
       desc: 'Numerical Computing'
     },
     {
-      imgSrc: '/images/R.svg',
+      imgSrc: './images/R.svg',
       label: 'R',
       desc: 'Statistical Computing'
     },
     {
-      imgSrc: '/images/aws.svg',
+      imgSrc: './images/aws.svg',
       label: 'Amazon Web Service',
       desc: 'Cloud Service'
     },
     {
-      imgSrc: '/images/Google Cloud.svg',
+      imgSrc: './images/Google Cloud.svg',
       label: 'Google Cloud Platform',
       desc: 'Cloud Platform'
     },
     {
-      imgSrc: '/images/Docker.svg',
+      imgSrc: './images/Docker.svg',
       label: 'Docker',
       desc: 'Containerization Platform'
     },
     {
-      imgSrc: '/images/Git.svg',
+      imgSrc: './images/Git.svg',
       label: 'Git',
       desc: 'Version Control'
     },
     {
-      imgSrc: '/images/github.svg',
+      imgSrc: './images/github.svg',
       label: 'Github',
       desc: 'Script Hosting'
     },
     {
-      imgSrc: '/images/GitLab.svg',
+      imgSrc: './images/GitLab.svg',
       label: 'GitLab',
       desc: 'DevOps Platform'
     },
     {
-      imgSrc: '/images/FastAPI.svg',
+      imgSrc: './images/FastAPI.svg',
       label: 'FastAPI',
       desc: 'Deployment Tool'
     },
     {
-      imgSrc: '/images/Flask.svg',
+      imgSrc: './images/Flask.svg',
       label: 'Flask',
       desc: 'Deployment Tool'
     },
     {
-      imgSrc: '/images/onnx_runtime.svg',
+      imgSrc: './images/onnx_runtime.svg',
       label: 'ONNX Runtime',
       desc: 'Inference Engine'
     },
     {
-      imgSrc: '/images/onnx.svg',
+      imgSrc: './images/onnx.svg',
       label: 'ONNX',
       desc: 'Open Model Format'
     },
     {
-      imgSrc: '/images/C++.svg',
+      imgSrc: './images/C++.svg',
       label: 'C++',
       desc: 'Programming Language'
     },
     {
-      imgSrc: '/images/C.svg',
+      imgSrc: './images/C.svg',
       label: 'C',
       desc: 'Programming Language'
     },
     {
-      imgSrc: '/images/huggingface.svg',
+      imgSrc: './images/huggingface.svg',
       label: 'HuggingFace API',
       desc: 'NLP library'
     },
     {
-      imgSrc: '/images/Kaggle.svg',
+      imgSrc: './images/Kaggle.svg',
       label: 'Kaggle API',
       desc: 'Data Science Platform'
     },
     {
-      imgSrc: '/images/Heroku.svg',
+      imgSrc: './images/Heroku.svg',
       label: 'Heroku',
       desc: 'Cloud Platform'
     },
     {
-      imgSrc: '/images/SPSS.svg',
+      imgSrc: './images/SPSS.svg',
       label: 'SPSS',
       desc: 'Statistical Analysis'
     },
     {
-      imgSrc: '/images/Swift.svg',
+      imgSrc: './images/Swift.svg',
       label: 'SwiftUI',
       desc: 'App Development'
     },
     {
-      imgSrc: '/images/HTML5.svg',
+      imgSrc: './images/HTML5.svg',
       label: 'HTML',
       desc: 'Web Development'
     },
     {
-      imgSrc: '/images/css3.svg',
+      imgSrc: './images/css3.svg',
       label: 'CSS',
       desc: 'Web Development'
     },
     {
-      imgSrc: '/images/JavaScript.svg',
+      imgSrc: './images/JavaScript.svg',
       label: 'Java Script',
       desc: 'Web Development'
     },

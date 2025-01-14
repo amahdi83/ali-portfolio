@@ -12,49 +12,49 @@ import ProjectCard from "../components/ProjectCard.jsx";
 
 const works = [
     {
-      imgSrc: '/images/project-1.png',
+      imgSrc: './images/project-1.png',
       title: 'Visual Saliency API',
       tags: ['API', 'Human Visual Attention'],
       projectLink: 'https://github.com/amahdi83/VSAPI'
     },
     {
-      imgSrc: '/images/project-2.png',
+      imgSrc: './images/project-2.png',
       title: 'Tetris Game',
       tags: ['Game', 'Reinforcement Learning'],
       projectLink: 'https://github.com/amahdi83/Tetris'
     },
     {
-      imgSrc: '/images/project-3.png',
+      imgSrc: './images/project-3.png',
       title: 'Pneumonia Analysis',
       tags: ['Classification', 'Computer Vision'],
       projectLink: 'https://github.com/amahdi83/Pneumonia-Classification'
     },
     {
-      imgSrc: '/images/project-4.png',
+      imgSrc: './images/project-4.png',
       title: 'VQVAE MNIST',
       tags: ['Compputer Vision', 'GenAI'],
       projectLink: 'https://github.com/amahdi83/VQVAE_mnist'
     },
     {
-      imgSrc: '/images/project-5.png',
+      imgSrc: './images/project-5.png',
       title: 'Cards Detector',
       tags: ['Computer Vision', 'YOLO'],
       projectLink: 'https://github.com/amahdi83/playing_cards_detecter'
     },
     {
-      imgSrc: '/images/project-6.png',
+      imgSrc: './images/project-6.png',
       title: 'VQVAE Celeb-A',
       tags: ['Computer Vision', 'GenAI'],
       projectLink: 'https://github.com/amahdi83/VQVAE_CelebA'
     },
     {
-      imgSrc: '/images/project-7.png',
+      imgSrc: './images/project-7.png',
       title: 'VAE Celeb-A',
       tags: ['Computer Vision', 'GenAI'],
       projectLink: 'https://github.com/amahdi83/VAE_CelebA'
     },
     {
-      imgSrc: '/images/project-8.png',
+      imgSrc: './images/project-8.png',
       title: 'DCGAN Celeb-A',
       tags: ['Computer Vision', 'GenAI'],
       projectLink: 'https://github.com/amahdi83/DCGAN-CelebA'
