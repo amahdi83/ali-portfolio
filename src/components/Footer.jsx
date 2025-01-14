@@ -13,7 +13,7 @@ import { ButtonPrimary } from "../components/Button"
 const sitemap = [
     {
       label: 'Home',
-      href: '/ali-portfolio/'
+      href: '/'
     },
     {
       label: 'Skills',
