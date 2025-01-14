@@ -17,7 +17,7 @@ const sitemap = [
     },
     {
       label: 'Skills',
-      href: '/${BASE_PATH}/skills'
+      href: '/ali-portfolio/skills'
     },
     {
       label: 'Projects',
@@ -46,8 +46,6 @@ const sitemap = [
 
 
 const Footer = () => {
-
-    const BASE_PATH = process.env.NODE_ENV === "production" ? "/ali-portfolio" : "";
 
     return (
         <footer className="section">
