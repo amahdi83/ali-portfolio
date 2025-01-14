@@ -8,17 +8,16 @@
  * Components
  */
 import { ButtonPrimary } from "../components/Button"
-import { NavLink } from "react-router-dom";
 
 
 const sitemap = [
     {
       label: 'Home',
-      href: '/'
+      href: '/ali-portfolio/'
     },
     {
       label: 'Skills',
-      href: '/skills'
+      href: '/ali-portfolio/skills'
     },
     {
       label: 'Projects',
@@ -68,13 +67,13 @@ const Footer = () => {
                             <ul>
                                 {sitemap.map(({ label, href }, Key) => (
                                     <li key={Key}>
-
-                                        <NavLink
-                                            to={href}
+                                        
+                                        <a 
+                                            href={href}
                                             className="block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200 reveal-up"
                                         >
                                             {label}
-                                        </NavLink>
+                                        </a>
                                         
                                     </li>
                                 ))}
