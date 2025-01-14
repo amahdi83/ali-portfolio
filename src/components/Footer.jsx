@@ -8,7 +8,7 @@
  * Components
  */
 import { ButtonPrimary } from "../components/Button"
-import { Link } from "react-router-dom";
+
 
 const sitemap = [
     {
@@ -68,12 +68,12 @@ const Footer = () => {
                                 {sitemap.map(({ label, href }, Key) => (
                                     <li key={Key}>
                                         
-                                        <link 
-                                            to={href}
+                                        <a 
+                                            href={href}
                                             className="block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200 reveal-up"
                                         >
                                             {label}
-                                        </link>
+                                        </a>
                                         
                                     </li>
                                 ))}
