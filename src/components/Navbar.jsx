@@ -65,10 +65,21 @@ const Navbar = ({ navOpen }) => {
   const activeBox = useRef(null);
   const location = useLocation();
 
+  // Handle click event to display the active box for each link
+  const handleClick = (e) => {
+    if (activeBox.current) {
+      const buttonRect = e.target.getBoundingClientRect();
+      activeBox.current.style.top = `${buttonRect.top + window.scrollY}px`;
+      activeBox.current.style.left = `${buttonRect.left + window.scrollX}px`;
+      activeBox.current.style.width = `${buttonRect.width}px`;
+      activeBox.current.style.height = `${buttonRect.height}px`;
+    }
+  };
+
   useEffect(() => {
-    // Reset the active box size and position when navigating to the contact page
-    if (location.pathname === "/contact" && activeBox.current) {
-      activeBox.current.style.width = "0";
+    // Ensure the active box is visible and positioned correctly when the location changes
+    if (activeBox.current && location.pathname === "/contact") {
+      activeBox.current.style.width = "0"; // Hide the box when on the contact page
       activeBox.current.style.height = "0";
     }
   }, [location]);
@@ -80,17 +91,6 @@ const Navbar = ({ navOpen }) => {
     { label: "Publications", link: "/publications" },
   ];
 
-  // Handle active box appearance on click
-  const handleClick = (e) => {
-    if (activeBox.current) {
-      const buttonRect = e.target.getBoundingClientRect();
-      activeBox.current.style.top = `${buttonRect.top + window.scrollY}px`;
-      activeBox.current.style.left = `${buttonRect.left + window.scrollX}px`;
-      activeBox.current.style.width = `${buttonRect.width}px`;
-      activeBox.current.style.height = `${buttonRect.height}px`;
-    }
-  };
-
   return (
     <nav className={`navbar ${navOpen ? "active" : ""}`}>
       {navItems.map(({ label, link }, key) => (
@@ -98,29 +98,29 @@ const Navbar = ({ navOpen }) => {
           to={link}
           key={key}
           className="nav-link"
-          activeClassName="active"
-          onClick={handleClick}
+          onClick={handleClick} // Trigger active box on click
         >
           {label}
         </NavLink>
       ))}
 
-      {/* "Contact Me" button inside navbar for small screens only */}
+      {/* "Contact Me" button inside navbar for small screens */}
       <NavLink
         to="/contact"
         className="nav-link md:hidden"
-        onClick={handleClick} // Trigger active box on click
+        onClick={handleClick} // Trigger active box on click for Contact Me
       >
         Contact Me
       </NavLink>
 
-      {/* Active box to show on clicking Contact Me on small screens */}
+      {/* Active box */}
       <div className="active-box" ref={activeBox}></div>
     </nav>
   );
 };
 
 export default Navbar;
+
 
 
 
