@@ -87,7 +87,7 @@ const Navbar = ({ navOpen, activeBox }) => {
     { label: "Skills", link: "/skills" },
     { label: "Projects", link: "/projects" },
     { label: "Publications", link: "/publications" },
-    // Note: "Contact Me" button is now handled separately in the Header component
+    // "Contact Me" button only shown in the navbar on small screens
   ];
 
   return (
@@ -103,7 +103,7 @@ const Navbar = ({ navOpen, activeBox }) => {
         </NavLink>
       ))}
 
-      {/* "Contact Me" button in navbar for smaller screens only */}
+      {/* "Contact Me" button inside navbar for small screens only */}
       <NavLink
         to="/contact"
         className="nav-link md:hidden"
@@ -118,5 +118,6 @@ const Navbar = ({ navOpen, activeBox }) => {
 };
 
 export default Navbar;
+
 
 

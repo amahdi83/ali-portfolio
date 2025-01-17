@@ -95,19 +95,23 @@ const Header = () => {
           <Navbar navOpen={navOpen} activeBox={activeBox} />
         </div>
 
-        {/* Contact Button for Larger Screens (hidden on small screens) */}
-        <button
-          className="btn btn-secondary hidden md:block md:justify-self-end"
-          onClick={handleContactClick}
-        >
-          Contact Me
-        </button>
+        {/* Remove the contact button from the header on smaller screens */}
+        <div className="hidden md:block">
+          {/* This button is only shown on larger screens */}
+          <button
+            className="btn btn-secondary md:justify-self-end"
+            onClick={handleContactClick}
+          >
+            Contact Me
+          </button>
+        </div>
       </div>
     </header>
   );
 };
 
 export default Header;
+
 
 
 
