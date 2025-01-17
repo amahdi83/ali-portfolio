@@ -58,32 +58,31 @@ export default Navbar;
 */}
 
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
-const Navbar = ({ navOpen, activeBox }) => {
+const Navbar = ({ navOpen }) => {
+  const activeBox = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
-    // If on contact page, hide the active box
+    // Reset the active box size and position when navigating to the contact page
     if (location.pathname === "/contact" && activeBox.current) {
       activeBox.current.style.width = "0";
       activeBox.current.style.height = "0";
     }
-  }, [location, activeBox]);
+  }, [location]);
 
   const navItems = [
     { label: "Home", link: "/" },
     { label: "Skills", link: "/skills" },
     { label: "Projects", link: "/projects" },
     { label: "Publications", link: "/publications" },
-    // Don't add "Contact Me" here because it's handled separately
   ];
 
-  // Handle Contact Me click to show active box on small screens
-  const handleContactClick = (e) => {
+  // Handle active box appearance on click
+  const handleClick = (e) => {
     if (activeBox.current) {
-      // Get the position of the "Contact Me" button
       const buttonRect = e.target.getBoundingClientRect();
       activeBox.current.style.top = `${buttonRect.top + window.scrollY}px`;
       activeBox.current.style.left = `${buttonRect.left + window.scrollX}px`;
@@ -100,6 +99,7 @@ const Navbar = ({ navOpen, activeBox }) => {
           key={key}
           className="nav-link"
           activeClassName="active"
+          onClick={handleClick}
         >
           {label}
         </NavLink>
@@ -109,7 +109,7 @@ const Navbar = ({ navOpen, activeBox }) => {
       <NavLink
         to="/contact"
         className="nav-link md:hidden"
-        onClick={handleContactClick} // Trigger active box on click
+        onClick={handleClick} // Trigger active box on click
       >
         Contact Me
       </NavLink>
@@ -121,6 +121,7 @@ const Navbar = ({ navOpen, activeBox }) => {
 };
 
 export default Navbar;
+
 
 
 
