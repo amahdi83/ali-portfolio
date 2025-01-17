@@ -203,7 +203,8 @@ const Navbar = ({ navOpen, activeBox }) => {
 
   useEffect(() => {
     const activeLink = document.querySelector(".nav-link.active");
-    if (activeLink && activeBox.current) {
+
+    if (activeLink && activeBox.current && location.pathname !== "/contact") {
       const rect = activeLink.getBoundingClientRect();
       const parentRect = activeLink.offsetParent.getBoundingClientRect();
 
@@ -211,6 +212,10 @@ const Navbar = ({ navOpen, activeBox }) => {
       activeBox.current.style.left = `${rect.left - parentRect.left}px`;
       activeBox.current.style.width = `${rect.width}px`;
       activeBox.current.style.height = `${rect.height}px`;
+    } else if (location.pathname === "/contact" && activeBox.current) {
+      // Hide the active box when on the contact page
+      activeBox.current.style.width = "0";
+      activeBox.current.style.height = "0";
     }
   }, [location, activeBox]);
 
@@ -239,4 +244,5 @@ const Navbar = ({ navOpen, activeBox }) => {
 };
 
 export default Navbar;
+
 
