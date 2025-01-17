@@ -85,81 +85,48 @@ export default Navbar;
 
 
 import { useRef, useEffect } from "react";
-import PropTypes from "prop-types";
 import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = ({ navOpen }) => {
-    const lastActiveLink = useRef(null);
-    const activeBox = useRef(null);
-    const location = useLocation();
+  const activeBox = useRef(null);
+  const location = useLocation();
 
-    const initActiveBox = () => {
-        if (lastActiveLink.current && activeBox.current) {
-            const rect = lastActiveLink.current.getBoundingClientRect();
-            const parentRect = lastActiveLink.current.offsetParent.getBoundingClientRect();
-            activeBox.current.style.top = rect.top - parentRect.top + "px";
-            activeBox.current.style.left = rect.left - parentRect.left + "px";
-            activeBox.current.style.width = rect.width + "px";
-            activeBox.current.style.height = rect.height + "px";
-        }
-    };
+  useEffect(() => {
+    const activeLink = document.querySelector(".nav-link.active");
+    if (activeLink && activeBox.current) {
+      const rect = activeLink.getBoundingClientRect();
+      const parentRect = activeLink.offsetParent.getBoundingClientRect();
 
-    useEffect(() => {
-        const activeLink = document.querySelector(`.nav-link[href="${location.pathname}"]`);
-        if (activeLink) {
-            activeLink.classList.add("active");
-            lastActiveLink.current = activeLink;
-        }
-        initActiveBox();
+      activeBox.current.style.top = `${rect.top - parentRect.top}px`;
+      activeBox.current.style.left = `${rect.left - parentRect.left}px`;
+      activeBox.current.style.width = `${rect.width}px`;
+      activeBox.current.style.height = `${rect.height}px`;
+    }
+  }, [location]);
 
-        window.addEventListener("resize", initActiveBox);
-        return () => window.removeEventListener("resize", initActiveBox);
-    }, [location.pathname]);
+  const navItems = [
+    { label: "Home", link: "/" },
+    { label: "Skills", link: "/skills" },
+    { label: "Projects", link: "/projects" },
+    { label: "Publications", link: "/publications" },
+    { label: "Contact", link: "/contact" },
+  ];
 
-    const activeCurrentLink = (event) => {
-        if (lastActiveLink.current) {
-            lastActiveLink.current.classList.remove("active");
-        }
-        event.target.classList.add("active");
-        lastActiveLink.current = event.target;
-
-        if (activeBox.current) {
-            const rect = event.target.getBoundingClientRect();
-            const parentRect = event.target.offsetParent.getBoundingClientRect();
-            activeBox.current.style.top = rect.top - parentRect.top + "px";
-            activeBox.current.style.left = rect.left - parentRect.left + "px";
-            activeBox.current.style.width = rect.width + "px";
-            activeBox.current.style.height = rect.height + "px";
-        }
-    };
-
-    const navItems = [
-        { label: "Home", link: "/", className: "nav-link" },
-        { label: "Skills", link: "/skills", className: "nav-link" },
-        { label: "Projects", link: "/projects", className: "nav-link" },
-        { label: "Publications", link: "/publications", className: "nav-link" },
-        { label: "Contact", link: "/contact", className: "nav-link md:hidden" },
-    ];
-
-    return (
-        <nav className={`navbar ${navOpen ? "active" : ""}`}>
-            {navItems.map(({ label, link, className }, key) => (
-                <NavLink
-                    to={link}
-                    key={key}
-                    className={({ isActive }) => `${className} ${isActive ? "active" : ""}`}
-                    onClick={activeCurrentLink}
-                >
-                    {label}
-                </NavLink>
-            ))}
-            <div className="active-box" ref={activeBox}></div>
-        </nav>
-    );
-};
-
-Navbar.propTypes = {
-    navOpen: PropTypes.bool.isRequired,
+  return (
+    <nav className={`navbar ${navOpen ? "active" : ""}`}>
+      {navItems.map(({ label, link }, key) => (
+        <NavLink
+          to={link}
+          key={key}
+          className="nav-link"
+          activeClassName="active"
+        >
+          {label}
+        </NavLink>
+      ))}
+      <div className="active-box" ref={activeBox}></div>
+    </nav>
+  );
 };
 
 export default Navbar;
