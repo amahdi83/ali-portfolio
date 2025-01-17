@@ -131,7 +131,7 @@ const Navbar = ({ navOpen }) => {
 
 export default Navbar;
 */}
-
+{/*}
 import { useRef, useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
@@ -173,6 +173,54 @@ const Navbar = ({ navOpen }) => {
   if (isSmallScreen) {
     navItems.push({ label: "Contact", link: "/contact" });
   }
+
+  return (
+    <nav className={`navbar ${navOpen ? "active" : ""}`}>
+      {navItems.map(({ label, link }, key) => (
+        <NavLink
+          to={link}
+          key={key}
+          className="nav-link"
+          activeClassName="active"
+        >
+          {label}
+        </NavLink>
+      ))}
+      <div className="active-box" ref={activeBox}></div>
+    </nav>
+  );
+};
+
+export default Navbar;
+*/}
+
+
+import { useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+
+const Navbar = ({ navOpen, activeBox }) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const activeLink = document.querySelector(".nav-link.active");
+    if (activeLink && activeBox.current) {
+      const rect = activeLink.getBoundingClientRect();
+      const parentRect = activeLink.offsetParent.getBoundingClientRect();
+
+      activeBox.current.style.top = `${rect.top - parentRect.top}px`;
+      activeBox.current.style.left = `${rect.left - parentRect.left}px`;
+      activeBox.current.style.width = `${rect.width}px`;
+      activeBox.current.style.height = `${rect.height}px`;
+    }
+  }, [location, activeBox]);
+
+  const navItems = [
+    { label: "Home", link: "/" },
+    { label: "Skills", link: "/skills" },
+    { label: "Projects", link: "/projects" },
+    { label: "Publications", link: "/publications" },
+    { label: "Contact", link: "/contact" },
+  ];
 
   return (
     <nav className={`navbar ${navOpen ? "active" : ""}`}>
