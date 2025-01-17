@@ -142,6 +142,11 @@ const skillItem = [
       desc: 'Open Model Format'
     },
     {
+      imgSrc: './images/gym.svg',
+      label: 'OpenAI Gym',
+      desc: 'Reinforcement Learning'
+    },
+    {
       imgSrc: './images/C++.svg',
       label: 'C++',
       desc: 'Programming Language'
@@ -190,6 +195,21 @@ const skillItem = [
       imgSrc: './images/JavaScript.svg',
       label: 'Java Script',
       desc: 'Web Development'
+    },
+    {
+      imgSrc: './images/NPM.svg',
+      label: 'NPM',
+      desc: 'Package Manager'
+    },
+    {
+      imgSrc: './images/React.svg',
+      label: 'React',
+      desc: 'App Development'
+    },
+    {
+      imgSrc: './images/TailwindCSS.svg',
+      label: 'Tailwind CSS',
+      desc: 'Style Design'
     },
   ];
 
