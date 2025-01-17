@@ -8,7 +8,7 @@
  * Components
  */
 import { ButtonPrimary } from "../components/Button"
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const sitemap = [
     {
@@ -17,7 +17,7 @@ const sitemap = [
     },
     {
       label: 'Skills',
-      href: '/ali-porfolio/skills'
+      href: '/skills'
     },
     {
       label: 'Projects',
@@ -77,13 +77,7 @@ const Footer = () => {
                                         </a>
                                         */}
 
-                                        <Link 
-                                            to={href}
-                                            className="block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200 reveal-up"
-                                        >
-                                            <Skills />
-                                            {label}
-                                        </Link>
+                                        <Route path={href} element={<Skills />} />
                                         
                                     </li>
                                 ))}
