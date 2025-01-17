@@ -65,7 +65,7 @@ const Navbar = ({ navOpen, activeBox }) => {
   const location = useLocation();
 
   useEffect(() => {
-    // Reset the active box size and position when navigating to the contact page
+    // If on contact page, hide the active box
     if (location.pathname === "/contact" && activeBox.current) {
       activeBox.current.style.width = "0";
       activeBox.current.style.height = "0";
@@ -77,12 +77,13 @@ const Navbar = ({ navOpen, activeBox }) => {
     { label: "Skills", link: "/skills" },
     { label: "Projects", link: "/projects" },
     { label: "Publications", link: "/publications" },
-    // Do not add "Contact Me" here since it’s handled separately
+    // Don't add "Contact Me" here because it's handled separately
   ];
 
+  // Handle Contact Me click to show active box on small screens
   const handleContactClick = (e) => {
-    // When clicking "Contact Me", show the active box
     if (activeBox.current) {
+      // Get the position of the "Contact Me" button
       const buttonRect = e.target.getBoundingClientRect();
       activeBox.current.style.top = `${buttonRect.top + window.scrollY}px`;
       activeBox.current.style.left = `${buttonRect.left + window.scrollX}px`;
@@ -113,12 +114,14 @@ const Navbar = ({ navOpen, activeBox }) => {
         Contact Me
       </NavLink>
 
+      {/* Active box to show on clicking Contact Me on small screens */}
       <div className="active-box" ref={activeBox}></div>
     </nav>
   );
 };
 
 export default Navbar;
+
 
 
 
