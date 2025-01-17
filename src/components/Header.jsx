@@ -52,7 +52,13 @@ const Header = () => {
     if (activeBox.current) {
       activeBox.current.style.width = "0";
       activeBox.current.style.height = "0";
+      activeBox.current.style.top = "0";
+      activeBox.current.style.left = "0";
     }
+
+    // Clear active state from navbar links
+    const activeLinks = document.querySelectorAll(".nav-link.active");
+    activeLinks.forEach((link) => link.classList.remove("active"));
 
     // Navigate to the contact page
     navigate("/contact");
@@ -90,4 +96,5 @@ const Header = () => {
 };
 
 export default Header;
+
 
