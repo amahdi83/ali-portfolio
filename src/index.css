@@ -98,9 +98,6 @@ body {
     z-index: 9999; /* Ensure it is above other elements */
   }
   
-  .nav-link.active {
-    position: relative;
-  }
 
   
 /* Button */

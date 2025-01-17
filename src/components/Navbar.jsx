@@ -58,16 +58,17 @@ export default Navbar;
 */}
 
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = ({ navOpen }) => {
   const activeBox = useRef(null);
   const location = useLocation();
+  const [activeLink, setActiveLink] = useState(null);
 
-  // Handle click event to display the active box for each link
-  const handleClick = (e) => {
-    if (activeBox.current) {
+  // Function to update the position of the active box
+  const updateActiveBoxPosition = (e) => {
+    if (activeBox.current && e.target) {
       const buttonRect = e.target.getBoundingClientRect();
       activeBox.current.style.top = `${buttonRect.top + window.scrollY}px`;
       activeBox.current.style.left = `${buttonRect.left + window.scrollX}px`;
@@ -76,13 +77,30 @@ const Navbar = ({ navOpen }) => {
     }
   };
 
+  // Handle click event to display the active box for each link
+  const handleClick = (e) => {
+    updateActiveBoxPosition(e);
+    setActiveLink(e.target);
+  };
+
   useEffect(() => {
-    // Ensure the active box is visible and positioned correctly when the location changes
-    if (activeBox.current && location.pathname === "/contact") {
-      activeBox.current.style.width = "0"; // Hide the box when on the contact page
-      activeBox.current.style.height = "0";
+    // When the location changes, reset the active box position
+    if (activeLink) {
+      updateActiveBoxPosition({ target: activeLink });
     }
-  }, [location]);
+  }, [location.pathname, activeLink]);
+
+  useEffect(() => {
+    // Add event listener to update position on window resize
+    const handleResize = () => {
+      if (activeLink) {
+        updateActiveBoxPosition({ target: activeLink });
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [activeLink]);
 
   const navItems = [
     { label: "Home", link: "/" },
@@ -120,6 +138,7 @@ const Navbar = ({ navOpen }) => {
 };
 
 export default Navbar;
+
 
 
 
