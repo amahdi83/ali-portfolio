@@ -87,8 +87,18 @@ const Navbar = ({ navOpen, activeBox }) => {
     { label: "Skills", link: "/skills" },
     { label: "Projects", link: "/projects" },
     { label: "Publications", link: "/publications" },
-    // "Contact Me" button only shown in the navbar on small screens
+    // "Contact Me" button is always visible on smaller screens in navbar
   ];
+
+  const handleContactClick = () => {
+    if (activeBox.current) {
+      // Show the active box when clicking on "Contact Me" on mobile screens
+      activeBox.current.style.width = "100px"; // or adjust as needed
+      activeBox.current.style.height = "40px"; // or adjust as needed
+      activeBox.current.style.top = "0"; // Set position to the contact button position
+      activeBox.current.style.left = "0"; // Adjust accordingly if needed
+    }
+  };
 
   return (
     <nav className={`navbar ${navOpen ? "active" : ""}`}>
@@ -107,7 +117,7 @@ const Navbar = ({ navOpen, activeBox }) => {
       <NavLink
         to="/contact"
         className="nav-link md:hidden"
-        onClick={() => activeBox.current.style.width = "0"} // Reset active box when Contact is clicked
+        onClick={handleContactClick} // Trigger the active box when clicked
       >
         Contact Me
       </NavLink>
@@ -118,6 +128,7 @@ const Navbar = ({ navOpen, activeBox }) => {
 };
 
 export default Navbar;
+
 
 
 
