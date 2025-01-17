@@ -91,7 +91,18 @@ body {
 }
 
 
+.active-box {
+    position: absolute;
+    background-color: white;
+    transition: all 0.3s ease;
+    z-index: 9999; /* Ensure it is above other elements */
+  }
+  
+  .nav-link.active {
+    position: relative;
+  }
 
+  
 /* Button */
 
 .btn {
