@@ -83,7 +83,7 @@ Navbar.propTypes = {
 export default Navbar;
 */}
 
-
+{/*
 import { useRef, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
@@ -111,6 +111,68 @@ const Navbar = ({ navOpen }) => {
     { label: "Publications", link: "/publications" },
     { label: "Contact", link: "/contact" },
   ];
+
+  return (
+    <nav className={`navbar ${navOpen ? "active" : ""}`}>
+      {navItems.map(({ label, link }, key) => (
+        <NavLink
+          to={link}
+          key={key}
+          className="nav-link"
+          activeClassName="active"
+        >
+          {label}
+        </NavLink>
+      ))}
+      <div className="active-box" ref={activeBox}></div>
+    </nav>
+  );
+};
+
+export default Navbar;
+*/}
+
+import { useRef, useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+
+const Navbar = ({ navOpen }) => {
+  const activeBox = useRef(null);
+  const location = useLocation();
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const activeLink = document.querySelector(".nav-link.active");
+    if (activeLink && activeBox.current) {
+      const rect = activeLink.getBoundingClientRect();
+      const parentRect = activeLink.offsetParent.getBoundingClientRect();
+
+      activeBox.current.style.top = `${rect.top - parentRect.top}px`;
+      activeBox.current.style.left = `${rect.left - parentRect.left}px`;
+      activeBox.current.style.width = `${rect.width}px`;
+      activeBox.current.style.height = `${rect.height}px`;
+    }
+  }, [location]);
+
+  const navItems = [
+    { label: "Home", link: "/" },
+    { label: "Skills", link: "/skills" },
+    { label: "Projects", link: "/projects" },
+    { label: "Publications", link: "/publications" },
+  ];
+
+  // Conditionally include "Contact" for small screens
+  if (isSmallScreen) {
+    navItems.push({ label: "Contact", link: "/contact" });
+  }
 
   return (
     <nav className={`navbar ${navOpen ? "active" : ""}`}>
