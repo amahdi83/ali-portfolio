@@ -39,17 +39,23 @@ export default Header;
 
 
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
   const activeBox = useRef(null);
+  const navigate = useNavigate();
 
-  const resetActiveBox = () => {
+  const handleContactClick = () => {
+    // Reset the active box styling
     if (activeBox.current) {
       activeBox.current.style.width = "0";
       activeBox.current.style.height = "0";
     }
+
+    // Navigate to the contact page
+    navigate("/contact");
   };
 
   return (
@@ -67,21 +73,21 @@ const Header = () => {
             </span>
           </button>
 
-          {/* Pass the activeBox reference to the Navbar */}
+          {/* Pass the activeBox ref to the Navbar */}
           <Navbar navOpen={navOpen} activeBox={activeBox} />
         </div>
 
         {/* Contact Button for Larger Screens */}
-        <a
-          href="/contact"
+        <button
           className="btn btn-secondary max-md:hidden md:justify-self-end"
-          onClick={resetActiveBox} // Reset the active box on button click
+          onClick={handleContactClick}
         >
           Contact Me
-        </a>
+        </button>
       </div>
     </header>
   );
 };
 
 export default Header;
+

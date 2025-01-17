@@ -219,7 +219,6 @@ const Navbar = ({ navOpen, activeBox }) => {
     { label: "Skills", link: "/skills" },
     { label: "Projects", link: "/projects" },
     { label: "Publications", link: "/publications" },
-    { label: "Contact", link: "/contact" },
   ];
 
   return (
@@ -240,3 +239,4 @@ const Navbar = ({ navOpen, activeBox }) => {
 };
 
 export default Navbar;
+
