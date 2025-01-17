@@ -90,15 +90,6 @@ body {
     @apply absolute bg-zinc-50 rounded-lg -z-10 transition-[top,left] duration-500
 }
 
-
-.active-box {
-    position: absolute;
-    background-color: white;
-    transition: all 0.3s ease;
-    z-index: 9999; /* Ensure it is above other elements */
-  }
-  
-
   
 /* Button */
 
