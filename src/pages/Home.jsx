@@ -82,7 +82,7 @@ const aboutItems = [
 
           <div className="hidden lg:block">
             <figure className="w-full max-w-[350px] ml-auto bg-gradient-to-t from-sky-400 via-40% via-sky-400/40 to-90% rounded-[50px] overflow-hidden">
-              <img src="images/hero-banner.png" width={656} height={800} alt="Ali Mahdi" className="w-full" />
+              <img src="https://github.com/user-attachments/assets/77574d74-2dc5-4205-b38f-91c41e6c7246" width={656} height={800} alt="Ali Mahdi" className="w-full" />
             </figure>
           </div>
         </div>
