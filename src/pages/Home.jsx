@@ -56,7 +56,7 @@ const aboutItems = [
           <div>
             <div className="flex items-center gap-3">
               <figure className="img-box w-9 h-9 rounded-xl">
-                <img src="images/avatar-1.jpg" width={40} height={40} alt="Ali Mahdi portrait" className="img-cover" />
+                <img src="https://github.com/user-attachments/assets/43913e9e-7484-41f2-9562-e2f776290a46" width={40} height={40} alt="Ali Mahdi portrait" className="img-cover" oncontextmenu="return false;" />
               </figure>
 
               <div className="flex items-center gap-1.5 text-zinc-400 text-sm tracking-wide">
@@ -81,8 +81,8 @@ const aboutItems = [
           </div>
 
           <div className="hidden lg:block">
-            <figure className="w-full max-w-[350px] ml-auto bg-gradient-to-t from-sky-400 via-40% via-sky-400/40 to-90% rounded-[50px] overflow-hidden">
-              <img src="https://github.com/user-attachments/assets/77574d74-2dc5-4205-b38f-91c41e6c7246" width={656} height={800} alt="Ali Mahdi" className="w-full" />
+            <figure className="w-full max-w-[350px] ml-auto bg-gradient-to-t from-sky-400 via-40% via-sky-400/40 to-80% rounded-[50px] overflow-hidden">
+              <img src="https://github.com/user-attachments/assets/77574d74-2dc5-4205-b38f-91c41e6c7246" width={656} height={800} alt="Ali Mahdi" className="w-full" oncontextmenu="return false;" />
             </figure>
           </div>
         </div>
