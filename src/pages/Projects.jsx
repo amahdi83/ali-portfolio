@@ -59,6 +59,12 @@ const works = [
       tags: ['Computer Vision', 'GenAI'],
       projectLink: 'https://github.com/amahdi83/DCGAN-CelebA'
     },
+    {
+      imgSrc: 'images/project-9.png',
+      title: 'Snake Game',
+      tags: ['Game', 'Reinforcement Learning'],
+      projectLink: 'https://github.com/amahdi83/snake-dqn'
+    },
   ];
 
 

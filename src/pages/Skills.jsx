@@ -159,7 +159,7 @@ const skillItem = [
     {
       imgSrc: './images/huggingface.svg',
       label: 'HuggingFace API',
-      desc: 'NLP library'
+      desc: 'LLMs library'
     },
     {
       imgSrc: './images/Kaggle.svg',
